@@ -1,3 +1,5 @@
+import { newProject } from "./addNewProject";
+
 const container = document.querySelector("#container");
 
 const pageLayout = (() => {
@@ -48,13 +50,22 @@ const mainContent = (() => {
         for(let i = 0; i < 2; i++) {
             const div = document.createElement("div");
             projectsDiv.appendChild(div);
+            if(i == 1) {
+                div.classList.add("projectsList");
+            }
         }
         const divs = document.querySelectorAll(".projectsDiv > div");
-        const textBox = document.createElement("input");
-        divs[0].appendChild(textBox);
+        const textbox = document.createElement("input");
+        textbox.classList.add("projectsTextbox");
+        divs[0].appendChild(textbox);
 
         const button = document.createElement("button");
-        button.textContent = "Add New Project"
+        button.classList.add("projectButton");
+        button.textContent = "Add New Project";
+        button.addEventListener("click", function() {
+            newProject.addNewProject()
+        }
+        )
         divs[0].appendChild(button);
     }
 

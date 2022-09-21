@@ -82,4 +82,15 @@ main {
 
 .projectsDiv > div:first-of-type {
     display: flex;
+    margin-bottom: 20px;
+}
+
+.projectsList {
+    display: flex;
+    flex-direction: column;
+    background-color: aquamarine;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    min-width: 200px;
+    min-height: 100px;
 }
