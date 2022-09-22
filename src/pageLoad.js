@@ -1,4 +1,4 @@
-import { newProject } from "./addNewProject";
+import { addNewProject } from "./addNewProject";
 
 const container = document.querySelector("#container");
 
@@ -63,7 +63,7 @@ const mainContent = (() => {
         button.classList.add("projectButton");
         button.textContent = "Add New Project";
         button.addEventListener("click", function() {
-            newProject.addNewProject()
+            addNewProject()
         }
         )
         divs[0].appendChild(button);

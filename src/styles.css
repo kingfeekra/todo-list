@@ -94,3 +94,16 @@ main {
     min-width: 200px;
     min-height: 100px;
 }
+
+.project {
+    display: flex;
+    margin: 20px;
+    font-size: 1.4rem;
+}
+
+.svgClass {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+}
