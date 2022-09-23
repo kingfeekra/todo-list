@@ -1,18 +1,4 @@
 const newProject = (() => {
-    const addDeleteFunction = function() {
-        /*const svgList = document.querySelectorAll(".svgClass");
-        const div = document.querySelector(".projectsList");
-        const test = function() {
-            for(let i = 0; i < svgList.length; i++) {
-            const svgParent = svgList[i].parentNode;
-            div.removeChild(svgParent);
-            }
-        }
-        for(let i = 0; i < svgList.length; i++) {
-            svgList[i].addEventListener("click", test())
-        }*/
-        console.log()
-    }
     const addProjectDiv = function() {
         const projectsList = document.querySelector(".projectsList");
         const textbox = document.querySelector(".projectsTextbox");
@@ -25,7 +11,10 @@ const newProject = (() => {
         svg.setAttributeNS(null, "viewbox", "0 0 24 24");
         svg.classList.add("svgClass");
         svg.addEventListener("click", function() {
-            console.log("ammm");
+            const div = document.querySelector(".projectsList");
+            const svgParent = svg.parentNode;
+            div.removeChild(svgParent);
+            
         })
         const projectDivList = document.querySelectorAll(".project");
 
@@ -35,7 +24,6 @@ const newProject = (() => {
 
         for(let i = 0; i < projectDivList.length; i++) { //loop to add svgs to divs
             projectDivList[i].appendChild(svg); 
-            //addDeleteFunction();
         }
 
         const svgList = document.querySelectorAll(".svgClass")
@@ -44,7 +32,6 @@ const newProject = (() => {
             svgList[i].appendChild(pathNode);
             
         }
-        addDeleteFunction();
     }
     return {
         addProjectDiv : function() {

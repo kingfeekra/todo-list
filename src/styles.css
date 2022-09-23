@@ -108,3 +108,12 @@ main {
     margin-left: auto;
     cursor: pointer;
 }
+
+.tasksDiv {
+    background-color: aquamarine;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    min-width: 100%;
+    min-height: 100vh;
+    margin-right: 100px;
+}
