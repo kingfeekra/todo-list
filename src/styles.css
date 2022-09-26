@@ -109,11 +109,16 @@ main {
     cursor: pointer;
 }
 
-.tasksDiv {
+.tasksList {
     background-color: aquamarine;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 10px;
     min-width: 100%;
-    min-height: 100vh;
+    min-height: 600px;
+    margin-top: 20px;
     margin-right: 100px;
+}
+
+.task {
+    display: flex;
 }

@@ -1,4 +1,5 @@
 import { addNewProject } from "./addNewProject";
+import { addNewTask } from "./addNewTask";
 
 const container = document.querySelector("#container");
 
@@ -71,9 +72,52 @@ const mainContent = (() => {
 
     const addTasksContent = function() {
         const tasksDiv = document.querySelector(".tasksDiv");
+        for(let i = 0; i < 2; i++) {
+            const div = document.createElement("div");
+            tasksDiv.appendChild(div);
+            if(i == 1) {
+                div.classList.add("tasksList");
+            }
+        }
+        const divs = document.querySelectorAll(".tasksDiv > div");
+        const textbox = document.createElement("input");
+        textbox.setAttribute("type", "text");
+        textbox.classList.add("tasksTextbox");
+        divs[0].appendChild(textbox);
+
+        const date = document.createElement("input");
+        date.setAttribute("type", "date");
+        date.classList.add("date");
+        divs[0].appendChild(date);
+
+        const urgency = document.createElement("select");
+        divs[0].appendChild(urgency);
+
+        const urgencySelect = document.querySelector("select");
+        const option1 = document.createElement("option");
+        option1.value = "high";
+        option1.textContent = "High";
+        urgencySelect.appendChild(option1);
+
+        const option2 = document.createElement("option");
+        option2.value = "medium";
+        option2.textContent = "Medium";
+        urgencySelect.appendChild(option2);
+
+        const option3 = document.createElement("option");
+        option3.value = "low";
+        option3.textContent = "Low";
+        urgencySelect.appendChild(option3);
+
+
         const button = document.createElement("button");
+        button.classList.add("taskButton");
         button.textContent = "Add New Task";
-        tasksDiv.appendChild(button);
+        button.addEventListener("click", function() {
+            addNewTask();
+        }
+        )
+        divs[0].appendChild(button);
     }
 
     return {

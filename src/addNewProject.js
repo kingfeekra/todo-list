@@ -6,7 +6,8 @@ const newProject = (() => {
         projectDiv.classList.add("project");
         projectDiv.textContent = textbox.value;
         projectsList.appendChild(projectDiv);
-
+    }
+    const addDeleteButton = function() {
         const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
         svg.setAttributeNS(null, "viewbox", "0 0 24 24");
         svg.classList.add("svgClass");
@@ -37,12 +38,16 @@ const newProject = (() => {
         addProjectDiv : function() {
             addProjectDiv();
         },
+        addDeleteButton : function() {
+            addDeleteButton();
+        }
     }
 }
 )()
 
 function addNewProject() {
     newProject.addProjectDiv();
+    newProject.addDeleteButton();
 }
 
 export{addNewProject};
