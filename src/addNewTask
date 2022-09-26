@@ -10,12 +10,17 @@ const newTask = (() => {
 
         const textbox = document.querySelector(".tasksTextbox");
         taskName.textContent = textbox.value;
-        tasks[tasks.length - 1].appendChild(taskName);
+        tasks[tasks.length - 1].appendChild(taskName); //tasks.length -1 makes sure the values only get added to the final task in the list i.e. the empty one
 
         const dueDate = document.createElement("p")
         const dateInput = document.querySelector("input[type = 'date']");
         dueDate.textContent = dateInput.value;
         tasks[tasks.length - 1].appendChild(dueDate);
+
+        const urgency = document.createElement("p");
+        const urgencyInput = document.querySelector("select");
+        urgency.textContent = urgencyInput.value;
+        tasks[tasks.length - 1].appendChild(urgency);
 
     }
 
