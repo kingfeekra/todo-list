@@ -1,3 +1,5 @@
+import {projectsObject} from "./projectsObject";
+
 const newProject = (() => {
     const addProjectDiv = function() {
         const projectsList = document.querySelector(".projectsList");
@@ -6,6 +8,9 @@ const newProject = (() => {
         projectDiv.classList.add("project");
         projectDiv.textContent = textbox.value;
         projectsList.appendChild(projectDiv);
+        projectsObject["project"+ Object.keys(projectsObject).length] = "poop";
+        console.log(projectsObject);
+
     }
     const addDeleteButton = function() {
         const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
