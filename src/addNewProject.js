@@ -1,14 +1,19 @@
 import {projectsObject} from "./projectsObject";
 
 const newProject = (() => {
+    let counter = 1;
+
     const addProjectDiv = function() {
         const projectsList = document.querySelector(".projectsList");
         const textbox = document.querySelector(".projectsTextbox");
         const projectDiv = document.createElement("div");
         projectDiv.classList.add("project");
         projectDiv.textContent = textbox.value;
+        projectDiv.dataset.projectNumber = "project" + counter;
+        console.log(projectDiv.dataset.projectNumber);
         projectsList.appendChild(projectDiv);
-        projectsObject["project"+ Object.keys(projectsObject).length] = "poop";
+        projectsObject["project"+ counter] = "poop";
+        counter++;
         console.log(projectsObject);
 
     }
@@ -39,7 +44,22 @@ const newProject = (() => {
             
         }
     }
+    const addDefaultProject = function() {
+        const projectsList = document.querySelector(".projectsList");
+        const projectDiv = document.createElement("div");
+        projectDiv.classList.add("project");
+        projectDiv.textContent = "Default Project";
+        projectDiv.dataset.projectNumber = "defaultProject";
+        console.log(projectDiv.dataset.projectNumber);
+        projectsList.appendChild(projectDiv);
+        projectsObject["defaultProject"] = "poop";
+        console.log(projectsObject);
+        addDeleteButton();
+    }
     return {
+        addDefaultProject : function() {
+            addDefaultProject();
+        },
         addProjectDiv : function() {
             addProjectDiv();
         },
@@ -55,4 +75,4 @@ function addNewProject() {
     newProject.addDeleteButton();
 }
 
-export{addNewProject};
+export{newProject, addNewProject};

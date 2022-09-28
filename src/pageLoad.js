@@ -1,4 +1,4 @@
-import { addNewProject } from "./addNewProject";
+import { newProject, addNewProject } from "./addNewProject";
 import { addNewTask } from "./addNewTask";
 
 const container = document.querySelector("#container");
@@ -144,6 +144,8 @@ function pageLoad() {
     mainContent.createTasksDiv();
     mainContent.addProjectContent();
     mainContent.addTasksContent();
+
+    newProject.addDefaultProject();
 }
 
 export {pageLoad};
