@@ -1,5 +1,5 @@
 const projectsObject = {
-    poop: "poop"
+    
 }
 
 const tasksObject = {

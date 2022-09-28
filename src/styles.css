@@ -99,6 +99,11 @@ main {
     display: flex;
     margin: 20px;
     font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.selectedProject {
+    background-color: green;
 }
 
 .svgClass {
@@ -122,3 +127,4 @@ main {
 .task {
     display: flex;
 }
+

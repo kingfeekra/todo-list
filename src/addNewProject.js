@@ -10,6 +10,21 @@ const newProject = (() => {
         projectDiv.classList.add("project");
         projectDiv.textContent = textbox.value;
         projectDiv.dataset.projectNumber = "project" + counter;
+        projectDiv.addEventListener("click", () => {
+            const projectList = document.querySelectorAll(".project");
+            if(projectDiv.classList.contains("selectedProject")) {
+                return;
+            }
+            for(let i = 0; i < projectList.length; i++) {
+                if(projectList[i].classList.contains("selectedProject")) {
+                    projectList[i].classList.remove("selectedProject");
+                }
+            }
+            if(!projectDiv.classList.contains("selectedProject")) {
+                projectDiv.classList.add("selectedProject")
+            }
+        });
+
         console.log(projectDiv.dataset.projectNumber);
         projectsList.appendChild(projectDiv);
         projectsObject["project"+ counter] = "poop";
@@ -17,6 +32,7 @@ const newProject = (() => {
         console.log(projectsObject);
 
     }
+
     const addDeleteButton = function() {
         const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
         svg.setAttributeNS(null, "viewbox", "0 0 24 24");
@@ -47,12 +63,27 @@ const newProject = (() => {
     const addDefaultProject = function() {
         const projectsList = document.querySelector(".projectsList");
         const projectDiv = document.createElement("div");
-        projectDiv.classList.add("project");
+        projectDiv.classList.add("project", "selectedProject");
         projectDiv.textContent = "Default Project";
         projectDiv.dataset.projectNumber = "defaultProject";
+        projectDiv.addEventListener("click", () => {
+            const projectList = document.querySelectorAll(".project");
+            if(projectDiv.classList.contains("selectedProject")) {
+                return;
+            }
+            for(let i = 0; i < projectList.length; i++) {
+                if(projectList[i].classList.contains("selectedProject")) {
+                    projectList[i].classList.remove("selectedProject");
+                }
+            }
+            if(!projectDiv.classList.contains("selectedProject")) {
+                projectDiv.classList.add("selectedProject")
+            }
+        });
+
         console.log(projectDiv.dataset.projectNumber);
         projectsList.appendChild(projectDiv);
-        projectsObject["defaultProject"] = "poop";
+        projectsObject["defaultProject"] = {};
         console.log(projectsObject);
         addDeleteButton();
     }
