@@ -13,24 +13,41 @@ const newTask = (() => {
         const textbox = document.querySelector(".tasksTextbox");
         taskName.textContent = textbox.value;
         tasks[tasks.length - 1].appendChild(taskName); //tasks.length -1 makes sure the values only get added to the final task in the list i.e. the empty one
-        projectsObject.defaultProject.tasks = {};
+        projectsObject.defaultProject.tasks = [];
 
         const selectedProject = document.querySelector(".selectedProject");
-        projectsObject[selectedProject.dataset.projectNumber].tasks.taskName = textbox.value;
 
         const dueDate = document.createElement("p")
         const dateInput = document.querySelector("input[type = 'date']");
         dueDate.textContent = dateInput.value;
         tasks[tasks.length - 1].appendChild(dueDate);
-        projectsObject[selectedProject.dataset.projectNumber].tasks.dueDate = dateInput.value;
+        
 
         const urgency = document.createElement("p");
         const urgencyInput = document.querySelector("select");
         urgency.textContent = urgencyInput.value;
         tasks[tasks.length - 1].appendChild(urgency);
-        projectsObject[selectedProject.dataset.projectNumber].tasks.urgency = urgencyInput.value;
-
+        addTaskToObject();
         console.log(projectsObject);
+    }
+
+    function addTaskToObject() {
+        const taskObject = {};
+
+        const textbox = document.querySelector(".tasksTextbox");
+        const taskName = textbox.value;
+        taskObject.taskName = taskName;
+
+        const dateInput = document.querySelector("input[type = 'date']");
+        const dueDate = dateInput.value;
+        taskObject.dueDate = dueDate;
+
+        const urgencyInput = document.querySelector("select");
+        const urgency = urgencyInput.value;
+        taskObject.urgency = urgency;
+
+        const selectedProject = document.querySelector(".selectedProject");
+        projectsObject[selectedProject.dataset.projectNumber].tasks.push(taskObject);
     }
 
     const addDeleteButton = function() {

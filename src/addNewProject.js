@@ -28,7 +28,7 @@ const newProject = (() => {
         console.log(projectDiv.dataset.projectNumber);
         projectsList.appendChild(projectDiv);
         projectsObject["project"+ counter] = {};
-        projectsObject[projectDiv.dataset.projectNumber].tasks = {};
+        projectsObject[projectDiv.dataset.projectNumber].tasks = [];
         counter++;
         console.log(projectsObject);
 
