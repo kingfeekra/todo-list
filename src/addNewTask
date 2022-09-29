@@ -14,19 +14,21 @@ const newTask = (() => {
         taskName.textContent = textbox.value;
         tasks[tasks.length - 1].appendChild(taskName); //tasks.length -1 makes sure the values only get added to the final task in the list i.e. the empty one
         projectsObject.defaultProject.tasks = {};
-        projectsObject.defaultProject.tasks.taskName = textbox.value;
+
+        const selectedProject = document.querySelector(".selectedProject");
+        projectsObject[selectedProject.dataset.projectNumber].tasks.taskName = textbox.value;
 
         const dueDate = document.createElement("p")
         const dateInput = document.querySelector("input[type = 'date']");
         dueDate.textContent = dateInput.value;
         tasks[tasks.length - 1].appendChild(dueDate);
-        projectsObject.defaultProject.tasks.dueDate = dateInput.value;
+        projectsObject[selectedProject.dataset.projectNumber].tasks.dueDate = dateInput.value;
 
         const urgency = document.createElement("p");
         const urgencyInput = document.querySelector("select");
         urgency.textContent = urgencyInput.value;
         tasks[tasks.length - 1].appendChild(urgency);
-        projectsObject.defaultProject.tasks.urgency = urgencyInput.value;
+        projectsObject[selectedProject.dataset.projectNumber].tasks.urgency = urgencyInput.value;
 
         console.log(projectsObject);
     }
