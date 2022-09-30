@@ -1,5 +1,5 @@
 import { projectsObject } from "./projectsObject";
-import { fuckOff } from "./displayTasks";
+import { taskDisplay } from "./displayTasks";
 
 const newTask = (() => {
     const addTask = function() {
@@ -16,8 +16,6 @@ const newTask = (() => {
         tasks[tasks.length - 1].appendChild(taskName); //tasks.length -1 makes sure the values only get added to the final task in the list i.e. the empty one
         projectsObject.defaultProject.tasks = [];
 
-        const selectedProject = document.querySelector(".selectedProject");
-
         const dueDate = document.createElement("p")
         const dateInput = document.querySelector("input[type = 'date']");
         dueDate.textContent = dateInput.value;
@@ -30,8 +28,6 @@ const newTask = (() => {
         tasks[tasks.length - 1].appendChild(urgency);
         addTaskToObject();
         console.log(projectsObject);
-
-        fuckOff();
     }
 
     function addTaskToObject() {
@@ -100,4 +96,4 @@ function addNewTask() {
     newTask.addDeleteButton();
 }
 
-export{addNewTask};
+export{addNewTask, newTask};

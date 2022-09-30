@@ -1,4 +1,5 @@
 import {projectsObject} from "./projectsObject";
+import { taskDisplay } from "./displayTasks";
 
 const newProject = (() => {
     let counter = 1;
@@ -22,16 +23,14 @@ const newProject = (() => {
             }
             if(!projectDiv.classList.contains("selectedProject")) {
                 projectDiv.classList.add("selectedProject")
+                taskDisplay.removeTasks();
+                taskDisplay.displayTasks();
             }
         });
-
-        console.log(projectDiv.dataset.projectNumber);
         projectsList.appendChild(projectDiv);
         projectsObject["project"+ counter] = {};
         projectsObject[projectDiv.dataset.projectNumber].tasks = [];
         counter++;
-        console.log(projectsObject);
-
     }
 
     const addDeleteButton = function() {
@@ -81,11 +80,8 @@ const newProject = (() => {
                 projectDiv.classList.add("selectedProject")
             }
         });
-
-        console.log(projectDiv.dataset.projectNumber);
         projectsList.appendChild(projectDiv);
         projectsObject["defaultProject"] = {};
-        console.log(projectsObject);
         addDeleteButton();
     }
     return {
