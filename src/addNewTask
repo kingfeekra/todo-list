@@ -1,4 +1,5 @@
 import { projectsObject } from "./projectsObject";
+import { fuckOff } from "./displayTasks";
 
 const newTask = (() => {
     const addTask = function() {
@@ -8,7 +9,7 @@ const newTask = (() => {
         tasksList.appendChild(taskDiv);
 
         const tasks = document.querySelectorAll(".task");
-        const taskName = document.createElement("h3");
+        const taskName = document.createElement("p");
 
         const textbox = document.querySelector(".tasksTextbox");
         taskName.textContent = textbox.value;
@@ -29,6 +30,8 @@ const newTask = (() => {
         tasks[tasks.length - 1].appendChild(urgency);
         addTaskToObject();
         console.log(projectsObject);
+
+        fuckOff();
     }
 
     function addTaskToObject() {
@@ -58,6 +61,10 @@ const newTask = (() => {
             const div = document.querySelector(".tasksList");
             const svgParent = svg.parentNode;
             div.removeChild(svgParent);
+
+            const taskInfo = document.querySelectorAll(`${svgParent} p`);
+
+
             
         })
         const taskDivList = document.querySelectorAll(".task");
