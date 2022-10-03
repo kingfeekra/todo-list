@@ -78,11 +78,14 @@ const newProject = (() => {
             }
             if(!projectDiv.classList.contains("selectedProject")) {
                 projectDiv.classList.add("selectedProject")
+                taskDisplay.removeTasks();
+                taskDisplay.displayTasks();
             }
         });
         projectsList.appendChild(projectDiv);
         projectsObject["defaultProject"] = {};
-        addDeleteButton();
+        projectsObject["defaultProject"].tasks = [];
+        
     }
     return {
         addDefaultProject : function() {

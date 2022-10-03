@@ -14,7 +14,6 @@ const newTask = (() => {
         const textbox = document.querySelector(".tasksTextbox");
         taskName.textContent = textbox.value;
         tasks[tasks.length - 1].appendChild(taskName); //tasks.length -1 makes sure the values only get added to the final task in the list i.e. the empty one
-        projectsObject.defaultProject.tasks = [];
 
         const dueDate = document.createElement("p")
         const dateInput = document.querySelector("input[type = 'date']");
@@ -56,10 +55,19 @@ const newTask = (() => {
         svg.addEventListener("click", function() {
             const div = document.querySelector(".tasksList");
             const svgParent = svg.parentNode;
+            console.log(svgParent);
+            const selectedProject = document.querySelector(".selectedProject");
+            const tasksArray = projectsObject[selectedProject.dataset.projectNumber].tasks;
+            const taskInfo = svgParent.querySelectorAll("p");
+
+            for(let i = 0; i < tasksArray.length; i++) {
+                if(taskInfo[0].textContent == tasksArray[i].taskName &&
+                    taskInfo[1].textContent == tasksArray[i].dueDate && 
+                    taskInfo[2].textContent == tasksArray[i].urgency) {
+                        tasksArray.splice(i, 1);
+                    }
+            }
             div.removeChild(svgParent);
-
-            const taskInfo = document.querySelectorAll(`${svgParent} p`);
-
 
             
         })

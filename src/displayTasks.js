@@ -39,6 +39,7 @@ const taskDisplay = (() => {
             newTask.addDeleteButton();
 
         }
+
     }
     return {
         removeTasks : function() {
