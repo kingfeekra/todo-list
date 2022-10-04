@@ -47,10 +47,20 @@ table {
 	border-spacing: 0;
 }
 
+@font-face {
+    font-family: customFont;
+    src: url(Roboto-Regular.ttf);
+}
+
+body {
+    font-family: customFont;
+}
+
 #container {
     display:flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: #f9d32c;
 }
 
 .header {
@@ -88,7 +98,7 @@ main {
 .projectsList {
     display: flex;
     flex-direction: column;
-    background-color: aquamarine;
+    background-color: #ffffff;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 10px;
     min-width: 200px;
@@ -100,10 +110,15 @@ main {
     margin: 20px;
     font-size: 1.4rem;
     cursor: pointer;
+    height: 40px;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .selectedProject {
-    background-color: green;
+    background-color: rgb(46, 46, 46);
+    color: #ffffff;
 }
 
 .svgClass {
@@ -112,10 +127,15 @@ main {
     height: 24px;
     margin-left: auto;
     cursor: pointer;
+    color: rgb(46, 46, 46);
+}
+
+.tasksDiv > div > input {
+    margin-right: 40px;
 }
 
 .tasksList {
-    background-color: aquamarine;
+    background-color: #ffffff;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 10px;
     min-width: 100%;
@@ -126,5 +146,17 @@ main {
 
 .task {
     display: flex;
+    display: flex;
+    margin: 20px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    height: 40px;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.task > p {
+    margin-right: 40px;
 }
 
