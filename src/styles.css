@@ -130,8 +130,64 @@ main {
     color: rgb(46, 46, 46);
 }
 
+.projectsDiv > div > input {
+    width: 55%;
+    padding: 10px;
+    border: 2px solid rgb(46, 46, 46);
+    border-radius: 4px;
+    margin-right: 20px;
+}
+
+.tasksDiv > div:first-of-type {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
 .tasksDiv > div > input {
     margin-right: 40px;
+}
+
+.tasksDiv > div > input:first-of-type {
+    width: 55%;
+    padding: 10px;
+    border: 2px solid rgb(46, 46, 46);
+    border-radius: 4px;
+}
+
+.tasksDiv > div > input:nth-of-type(2) {
+    width: 10%;
+    min-width: 130px;
+    padding: 8px;
+    border: 2px solid rgb(46, 46, 46);
+    border-radius: 4px;
+}
+
+select {
+    width: 5%;
+    min-width: 70px;
+    padding: 9px;
+    border: 2px solid rgb(46, 46, 46);
+    border-radius: 4px;
+    margin-right: 40px;
+}
+
+.taskButton, .projectButton {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    letter-spacing: 0px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.253);
+    transition: 0.3s;
+    cursor: pointer;
+}
+  
+.taskButton:hover, .projectButton:hover {
+      background-color: rgb(46, 46, 46);
+      color: #ffffff;
+      transition: 0.3s;
 }
 
 .tasksList {
@@ -158,5 +214,20 @@ main {
 
 .task > p {
     margin-right: 40px;
+}
+
+.task > p:first-of-type {
+    width: 55%;
+    margin-right: 60px;
+}
+
+.task > p:nth-of-type(2) {
+    width: 10%;
+    min-width: 130px;
+}
+
+.task > p:nth-of-type(3) {
+    width: 5%;
+    min-width: 70px;
 }
 

@@ -32,16 +32,17 @@ const newProject = (() => {
             }            
         });
         projectsList.appendChild(projectDiv);
+        addDeleteButton();
         projectsObject["project"+ counter] = {};
         projectsObject[projectDiv.dataset.projectNumber].tasks = [];
         counter++;
     }
 
-    const addDeleteButton = function() {
+    function addDeleteButton() {
         const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
         svg.setAttributeNS(null, "viewbox", "0 0 24 24");
         svg.classList.add("svgClass");
-        const svgParent = svg.parentNode;
+        const svgParent = svg.parentElement;
         svg.addEventListener("click", function() {
             const div = document.querySelector(".projectsList");
             div.removeChild(svgParent);
@@ -135,7 +136,7 @@ const newProject = (() => {
 
 function addNewProject() {
     newProject.addProjectDiv();
-    newProject.addDeleteButton();
+  
 }
 
 export{newProject, addNewProject};
