@@ -58,6 +58,7 @@ const mainContent = (() => {
         const divs = document.querySelectorAll(".projectsDiv > div");
         const textbox = document.createElement("input");
         textbox.classList.add("projectsTextbox");
+        textbox.placeholder = "Project name..."
         divs[0].appendChild(textbox);
 
         const button = document.createElement("button");
@@ -83,6 +84,7 @@ const mainContent = (() => {
         const textbox = document.createElement("input");
         textbox.setAttribute("type", "text");
         textbox.classList.add("tasksTextbox");
+        textbox.placeholder = "Task name..."
         divs[0].appendChild(textbox);
 
         const date = document.createElement("input");
@@ -95,18 +97,18 @@ const mainContent = (() => {
 
         const urgencySelect = document.querySelector("select");
         const option1 = document.createElement("option");
-        option1.value = "high";
-        option1.textContent = "High";
+        option1.value = "Urgent";
+        option1.textContent = "Urgent";
         urgencySelect.appendChild(option1);
 
         const option2 = document.createElement("option");
-        option2.value = "medium";
+        option2.value = "Medium";
         option2.textContent = "Medium";
         urgencySelect.appendChild(option2);
 
         const option3 = document.createElement("option");
-        option3.value = "low";
-        option3.textContent = "Low";
+        option3.value = "Not Urgent";
+        option3.textContent = "Not Urgent";
         urgencySelect.appendChild(option3);
 
 

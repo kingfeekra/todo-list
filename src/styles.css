@@ -164,7 +164,7 @@ main {
 
 select {
     width: 5%;
-    min-width: 70px;
+    min-width: 90px;
     padding: 9px;
     border: 2px solid rgb(46, 46, 46);
     border-radius: 4px;
@@ -218,7 +218,7 @@ select {
 
 .task > p:first-of-type {
     width: 55%;
-    margin-right: 60px;
+    margin-right: 70px;
 }
 
 .task > p:nth-of-type(2) {
