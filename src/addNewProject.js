@@ -100,9 +100,10 @@ const newProject = (() => {
         const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
         svg.setAttributeNS(null, "viewbox", "0 0 24 24");
         svg.classList.add("svgClass");
-        const svgParent = svg.parentNode;
+        
         svg.addEventListener("click", function() {
             const div = document.querySelector(".projectsList");
+            const svgParent = svg.parentNode;
             div.removeChild(svgParent);
             
         })
